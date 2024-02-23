@@ -39,18 +39,24 @@ variable "boot_disk_type" {
   default     = "pd-ssd"
 }
 
-variable "subnets" {
-  description = "A map of regions to subnet configurations"
-  type = map(object({
-    subnet_ip = string
-  }))
+# for having 2 different subnets use this variable 
+# variable "subnets" {
+#   description = "A map of regions to subnet configurations"
+#   type = map(object({
+#     subnet_ip = string
+#   }))
 
-  default = {
-    "europe-west3" = {
-      subnet_ip = "10.0.0.0/20"
-    },
-    "europe-west2" = {
-      subnet_ip = "10.0.16.0/20"
-    }
-  }
+#   default = {
+#     "europe-west3" = {
+#       subnet_ip = "10.0.0.0/20"
+#     },
+#     "europe-west2" = {
+#       subnet_ip = "10.0.16.0/20"
+#     }
+#   }
+# }
+
+variable "subnets" {
+  description = "subnet configurations"
+  default     = "10.0.0.0/20"
 }

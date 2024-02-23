@@ -20,9 +20,9 @@ resource "google_compute_address" "vm_external_ip" {
 }
 
 resource "google_compute_subnetwork" "my_subnet" {
-  for_each          = var.subnets
+  for_each          = toset(var.regions)
   name              = "my-subnet-${each.key}"
   region            = each.key
   network           = google_compute_network.my_vpc[each.key].name
-  ip_cidr_range     = each.value.subnet_ip
+  ip_cidr_range     = var.subnets
 }
