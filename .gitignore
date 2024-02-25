@@ -1,3 +1,5 @@
 .history
 *.json
 .terraform*
+
+terraform.tfstate
