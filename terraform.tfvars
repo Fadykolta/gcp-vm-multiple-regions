@@ -1,4 +1,5 @@
-regions = ["europe-west3", "europe-west2"] #Frankfurt, London
+regions = ["us-east1"]
+# regions = ["us-east1", "us-west1"]
 
 network_tags = ["pre-prod", "prod"]
 
